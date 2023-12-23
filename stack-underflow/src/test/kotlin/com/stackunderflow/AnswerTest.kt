@@ -23,6 +23,5 @@ class AnswerTest {
         answer.vote(VoteDirection.Down)
 
         assertEquals(-1, answer.votes)
-
     }
 }

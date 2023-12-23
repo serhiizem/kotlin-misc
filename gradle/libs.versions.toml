@@ -1,0 +1,15 @@
+[versions]
+kotlin_version = "1.9.0"
+junit_version = "5.10.0"
+logback_version = "1.4.12"
+catalogUpdateVersion_version = "0.8.1"
+updateVersion_version = "0.48.0"
+
+[libraries]
+junit = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit_version" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback_version" }
+
+[plugins]
+catalogUpdate = { id = "nl.littlerobots.version-catalog-update", version.ref = "catalogUpdateVersion_version" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin_version" }
+versionUpdate = { id = "com.github.ben-manes.versions", version.ref = "updateVersion_version" }

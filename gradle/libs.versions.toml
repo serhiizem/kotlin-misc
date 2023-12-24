@@ -1,7 +1,7 @@
 [versions]
 kotlin_version = "1.9.0"
 junit_version = "5.10.0"
-logback_version = "1.4.12"
+logback_version = "1.4.11"
 catalogUpdateVersion_version = "0.8.1"
 updateVersion_version = "0.48.0"
 

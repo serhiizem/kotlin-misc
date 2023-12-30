@@ -1,4 +1,4 @@
-package com.stackunderflow
+package com.stackunderflow.domain
 
 enum class VoteDirection {
     Up,

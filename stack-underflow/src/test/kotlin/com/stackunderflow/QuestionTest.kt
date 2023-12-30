@@ -1,5 +1,8 @@
 package com.stackunderflow
 
+import com.stackunderflow.domain.Answer
+import com.stackunderflow.domain.Question
+import com.stackunderflow.domain.User
 import com.stackunderflow.exceptions.MalformedQuestionException
 import org.amshove.kluent.*
 import org.junit.jupiter.api.Assertions.assertThrows
@@ -18,7 +21,7 @@ class QuestionTest {
         @ValueSource(strings = [" ", "   ", "\n", "\t"])
         @ParameterizedTest
         fun `should have a valid title`(title: String) {
-            val user = User(1, "Sam", 0)
+            val user = User(1, "Sam", 0, 0, 0, 0)
 
             assertThrows(MalformedQuestionException::class.java) { Question(1, user, "", "ggg") }
         }
@@ -26,7 +29,7 @@ class QuestionTest {
         @EmptySource
         @ParameterizedTest
         fun `should have a valid discussion`(discussion: String) {
-            val user = User(1, "Sam", 0)
+            val user = User(1, "Sam", 0, 0, 0, 0)
 
             invoking {
                 Question(
@@ -44,15 +47,17 @@ class QuestionTest {
 
         @Test
         fun `should be empty when no answers yet`() {
-            val question = Question(1, User(1, "Sam", 0), "title", "discussion")
+            val user = User(1, "Sam", 0, 0, 0, 0)
+            val question = Question(1, user, "title", "discussion")
 
             question.answers.shouldBeEmpty()
         }
 
         @Test
         fun `should not be empty once the first answer is added`() {
-            val question = Question(1, User(1, "Sam", 0), "title", "discussion")
-            val answer = Answer(1, User(2, "Alice", 20))
+            val author = User(1, "Sam", 0, 0, 0, 0)
+            val question = Question(1, author, "title", "discussion")
+            val answer = Answer(1, User(2, "Alice", 20, 0, 0, 0))
 
             question.addAnswer(answer)
 
@@ -62,8 +67,11 @@ class QuestionTest {
 
         @Test
         fun `should contain added answer`() {
-            val question = Question(1, User(1, "Sam", 0), "title", "discussion")
-            val answer = Answer(1, User(2, "Alice", 20))
+            val author = User(1, "Sam", 0, 0, 0, 0)
+            val question = Question(1, author, "title", "discussion")
+
+            val replier = User(2, "Alice", 20, 0, 0, 0)
+            val answer = Answer(1, replier)
 
             question.addAnswer(answer)
 

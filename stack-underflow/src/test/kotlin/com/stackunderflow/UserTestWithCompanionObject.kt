@@ -1,5 +1,6 @@
 package com.stackunderflow
 
+import com.stackunderflow.domain.User
 import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.params.ParameterizedTest
@@ -13,12 +14,12 @@ class UserTestWithCompanionObject {
         @JvmStatic
         private fun usersDataArgumentsSource() = listOf(
             Arguments.of(-1, "Sam")
-        );
+        )
     }
 
     @MethodSource("usersDataArgumentsSource")
     @ParameterizedTest
-    fun `should test`(id: Int, name: String) {
-        assertThrows(IllegalArgumentException::class.java) { User(id, name, 10) }
+    fun `should test throw exception on invalid id`(id: Int, name: String) {
+        assertThrows(IllegalArgumentException::class.java) { User(id, name, 10, 0, 0, 0) }
     }
 }

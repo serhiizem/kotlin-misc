@@ -1,5 +1,7 @@
 package com.stackunderflow
 
+import com.stackunderflow.domain.User
+import com.stackunderflow.domain.VoteDirection
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -31,12 +33,12 @@ class UserTest {
         @ParameterizedTest(name = "Id: {0}, Name: {1}")
         @ArgumentsSource(UserArgumentProvider::class)
         fun `should be valid`(id: Int, name: String) {
-            Assertions.assertThrows(IllegalArgumentException::class.java) { User(id, name, 0) }
+            Assertions.assertThrows(IllegalArgumentException::class.java) { User(id, name, 0, 0, 0, 0) }
         }
 
         @Test
         fun `reputation when question or answer is voted up`() {
-            val user = User(1, "Sam", 0)
+            val user = User(1, "Sam", 0, 0, 0, 0)
 
             user.questionOrAnswerVotedOn(VoteDirection.Up)
 
@@ -45,7 +47,7 @@ class UserTest {
 
         @Test
         fun `reputation when question or answer is voted up and the user has an initial reputation`() {
-            val user = User(1, "Sam", 10)
+            val user = User(1, "Sam", 10, 0, 0, 0)
 
             user.questionOrAnswerVotedOn(VoteDirection.Up)
 
@@ -58,7 +60,7 @@ class UserTest {
 
         @Test
         fun `reputation when question or answer is voted down`() {
-            val user = User(1, "Sam", 0)
+            val user = User(1, "Sam", 0, 0, 0, 0)
 
             user.questionOrAnswerVotedOn(VoteDirection.Down)
 
@@ -67,7 +69,7 @@ class UserTest {
 
         @Test
         fun `reputation when question or answer is voted down and the user has an initial reputation`() {
-            val user = User(1, "Sam", 10)
+            val user = User(1, "Sam", 10, 0, 0, 0)
 
             user.questionOrAnswerVotedOn(VoteDirection.Down)
 

@@ -1,3 +1,3 @@
 package com.stackunderflow.exceptions
 
-class MalformedQuestionException : Exception()
+class MalformedQuestionException(errorMessage: String = "Internal Server Error") : Exception(errorMessage)

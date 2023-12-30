@@ -45,7 +45,7 @@ class UnderflowService(val questionRepository: IQuestionRepository, val userRepo
             userRepository.update(owner)
             return question.votes
         } catch (ex: Exception) {
-            throw ServiceException("Unable to vote up question")
+            throw ServiceException("Unable to vote up question", ex)
         }
     }
 

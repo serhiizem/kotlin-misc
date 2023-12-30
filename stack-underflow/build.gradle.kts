@@ -12,6 +12,7 @@ dependencies {
 
     testImplementation(libs.junit)
     testImplementation(libs.kluent)
+    testImplementation(libs.mockk)
 }
 
 tasks.test {

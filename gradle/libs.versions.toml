@@ -2,6 +2,7 @@
 kotlin_version = "1.9.0"
 junit_version = "5.10.0"
 kluent_version = "1.73"
+mockk_version = "1.13.8"
 logback_version = "1.4.12"
 catalogUpdateVersion_version = "0.8.1"
 updateVersion_version = "0.48.0"
@@ -9,6 +10,7 @@ updateVersion_version = "0.48.0"
 [libraries]
 junit = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit_version" }
 kluent = { module = "org.amshove.kluent:kluent", version.ref = "kluent_version" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk_version" }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback_version" }
 
 [plugins]

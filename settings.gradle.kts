@@ -1,2 +1,2 @@
-rootProject.name = "kotlin-practice"
+rootProject.name = "kotlin-misc"
 include("stack-underflow")

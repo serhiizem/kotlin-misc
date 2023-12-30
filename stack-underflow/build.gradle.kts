@@ -11,6 +11,7 @@ dependencies {
     implementation(libs.logback)
 
     testImplementation(libs.junit)
+    testImplementation(libs.kluent)
 }
 
 tasks.test {

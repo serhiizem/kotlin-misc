@@ -1,6 +1,7 @@
 package com.stackunderflow
 
-import org.junit.jupiter.api.Assertions.assertEquals
+import org.amshove.kluent.`should be equal to`
+import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 class AnswerTest {
@@ -13,7 +14,7 @@ class AnswerTest {
 
         answer.vote(VoteDirection.Up)
 
-        assertEquals(1, answer.votes)
+        answer.votes.shouldBeEqualTo(1)
     }
 
     @Test
@@ -22,6 +23,6 @@ class AnswerTest {
 
         answer.vote(VoteDirection.Down)
 
-        assertEquals(-1, answer.votes)
+        answer.votes `should be equal to` (-1)
     }
 }

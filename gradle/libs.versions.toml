@@ -1,12 +1,14 @@
 [versions]
 kotlin_version = "1.9.0"
 junit_version = "5.10.0"
-logback_version = "1.4.11"
+kluent_version = "1.73"
+logback_version = "1.4.12"
 catalogUpdateVersion_version = "0.8.1"
 updateVersion_version = "0.48.0"
 
 [libraries]
 junit = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit_version" }
+kluent = { module = "org.amshove.kluent:kluent", version.ref = "kluent_version" }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback_version" }
 
 [plugins]

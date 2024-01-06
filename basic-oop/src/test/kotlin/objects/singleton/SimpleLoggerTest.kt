@@ -1,9 +1,9 @@
-package singleton
+package objects.singleton
 
 import org.amshove.kluent.invoking
 import org.amshove.kluent.shouldNotThrow
-import org.example.singleton.Logger
-import org.example.singleton.SimpleLogger
+import org.example.objects.singleton.Logger
+import org.example.objects.singleton.SimpleLogger
 import org.junit.jupiter.api.Test
 
 class SimpleLoggerTest {

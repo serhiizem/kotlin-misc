@@ -1,9 +1,9 @@
-package anonymous.objects
+package objects.anonymous
 
 import org.amshove.kluent.shouldBeEqualTo
-import org.example.anonymous.objects.ChangeListener
-import org.example.anonymous.objects.Position
-import org.example.anonymous.objects.RetailPortfolio
+import org.example.objects.anonymous.ChangeListener
+import org.example.objects.anonymous.Position
+import org.example.objects.anonymous.RetailPortfolio
 import org.junit.jupiter.api.Test
 import java.util.concurrent.atomic.AtomicBoolean
 

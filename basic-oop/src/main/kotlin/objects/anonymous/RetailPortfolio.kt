@@ -1,4 +1,4 @@
-package org.example.anonymous.objects
+package org.example.objects.anonymous
 
 class Position
 

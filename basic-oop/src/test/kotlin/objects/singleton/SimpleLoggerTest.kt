@@ -1,10 +1,9 @@
 package objects.singleton
 
-import org.amshove.kluent.invoking
-import org.amshove.kluent.shouldNotThrow
 import org.example.objects.singleton.Logger
 import org.example.objects.singleton.SimpleLogger
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertDoesNotThrow
 
 class SimpleLoggerTest {
 
@@ -12,6 +11,6 @@ class SimpleLoggerTest {
     fun `should invoke methods on singleton`() {
         val logger: Logger = SimpleLogger
 
-        invoking { logger.logWarn() } shouldNotThrow Throwable::class
+        assertDoesNotThrow { logger.logWarn() }
     }
 }

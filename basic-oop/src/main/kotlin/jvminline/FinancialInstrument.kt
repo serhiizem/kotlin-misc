@@ -12,7 +12,6 @@ value class TickerSymbol(private val value: String) {
     }
 }
 
-
 @JvmInline
 value class StockExchange(private val name: String) {
 
